@@ -159,10 +159,15 @@ main{
             color: variaveis.$corDeFundo;
          }
 
-         @media (max-width:1023px) {
+         @media (max-width:1024px) {
             width: 40px;
-            height: 40px;
+            height: 40px;         
             }
+            @media (max-width:667px) {
+            font-size: 22px;
+               }
+
+
          
       }
    }
