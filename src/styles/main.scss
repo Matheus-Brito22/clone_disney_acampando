@@ -1,0 +1,305 @@
+@use 'variaveis';
+
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   list-style: none;
+   font-family: sans-serif;
+}
+
+@font-face {
+   font-family: Avenir;
+   src: url(../../assets/font/Avenir-Bold.woff2);
+   font-weight: 400;
+}
+@font-face {
+   font-family: Avenir;
+   src: url(../../assets/font/Avenir-Regular.woff2);
+   font-weight: 700;
+}
+
+body{
+   background-color: #0e0b14;
+}
+
+.text{
+   font-size: 20px;
+   font-family: Avenir;
+   color: variaveis.$corDdeTextoPrimaria;
+}
+.text-small{
+   font-size: 14px;
+   font-family: Avenir;
+   color: variaveis.$corDdeTextoPrimaria;
+}
+.title{
+   font-size: 28px;
+   font-weight: 700;
+   font-family: Avenir;
+   color: variaveis.$corDdeTextoPrimaria;
+}
+
+main{
+   background-image: url(../../src/images/tela_fundo.jpg);
+   background-size: cover;
+   background-attachment: fixed;
+   
+   @media (max-width:1600px) {
+      background-image: url(../../src/images/tela_fundo_tablet.jpg);
+      background-size:contain;
+      background-repeat: no-repeat;
+   
+   }
+}
+
+.main__container{
+   padding: 5.6vw;
+
+   .back{
+      background-image: radial-gradient(farthest-side at 73% 21%, transparent, rgb(26, 29, 41));
+       top: 0;
+       left: 0;
+       right: 0;
+       position: absolute;
+       height: 125vh;
+
+       @media (max-width:667px) {
+         height: 150vh;
+      }
+   }
+
+   &__conteudo{
+      position: relative;
+      max-width: 1200px;
+      
+      img{
+         max-width: 341px;
+         width: 100%;
+
+         @media (max-width:1024px) {
+            max-width: 240px;
+         }
+         @media (max-width:667px) {
+            max-width: 180px;
+         }
+      }
+      p{
+         max-width: 850px;
+         
+         @media (max-width:1024px) {
+            max-width: 650px;
+         }
+
+         @media (max-width:667px) {
+          font-size: 18px;
+         }
+      }
+   }
+   .restricao{
+      display: flex; 
+      align-items: center;
+
+      &__item{
+         max-width: 25px;
+         width: 100%;
+         margin-right: 4px;
+      }
+   }
+   .buttons{
+      display: flex;
+      align-items: center;
+
+      .button1{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         color:#0e0b14;
+         font-size: 16px;
+         font-family: Avenir;
+         text-transform: uppercase;
+         margin-top: 24px;
+         margin-bottom: 32px;
+         width: 170px;
+         height: 56px;
+         border: none;
+         border-radius: 5px;
+         img{
+            max-width: 35px;
+            margin-right: 10px;
+         }
+         
+         &:hover{
+            transition: ease .5s;
+            background-color: darken(variaveis.$corDdeTextoPrimaria, 15%);
+         }
+
+         @media (max-width:1023px) {
+         width: 140px;
+         height: 46px;
+         }
+      }
+      .button2{
+         background-color: variaveis.$corDeFundo;
+         color: variaveis.$corDdeTextoPrimaria;
+         font-size: 32px;
+         font-family: Avenir;
+         font-weight: bold;
+         font-family: sans-serif;
+         width: 45px;
+         height: 45px;  
+         border:solid 2px variaveis.$corDdeTextoPrimaria;
+         border-radius: 50%;
+         margin-left: 25px;
+
+         &:hover{
+            transition: ease .5s;
+            background-color: variaveis.$corDdeTextoPrimaria;
+            color: variaveis.$corDeFundo;
+         }
+
+         @media (max-width:1023px) {
+            width: 40px;
+            height: 40px;
+            }
+         
+      }
+   }
+
+   .others{
+      position: relative;
+      margin-top: 60px;
+      
+      .--is-active{
+         display: none;
+      }
+      nav{
+         max-width: 1438px;
+         width: 100%;
+         border-bottom: solid 2px #808080;
+         
+         @media (max-width:1024px) {
+            max-width: 1240px;
+         }
+      }
+      &__button{
+    
+       background-color: transparent;
+       color: variaveis.$corDdeTextoPrimaria;
+       font-size: 20px;
+       font-weight: 700;
+       font-family: Avenir;
+       letter-spacing: 2;
+       text-transform: uppercase;
+       border: solid 2px transparent;
+       padding-bottom: 15px;
+       margin-right: 40px;
+       cursor: pointer;
+
+       &--is-active{
+         border-bottom: solid 2px variaveis.$corDdeTextoPrimaria; 
+       }
+
+       &:hover{
+         border-bottom: solid 2px variaveis.$corDdeTextoPrimaria; 
+
+       } 
+      }
+       h3 {
+          margin-bottom: 20px;
+          margin-top: 20px;
+          }
+          p{
+            max-width: 750px;
+            width: 100%;
+         }
+
+      &__sugestoes{
+        max-width: 1700px;
+       
+         &__list{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+         
+            @media (max-width:1024px) {
+               display: grid;
+               grid-template-columns: 1fr 1fr 1fr;
+             }
+
+            @media (max-width:667px) {
+               display: grid;
+               grid-template-columns: 1fr 1fr;
+             }
+
+            &__item{             
+               margin-top: 20px;
+               margin-right: 20px;
+               
+                  img{
+                     max-width: 344px;
+                     width:100%;
+                     border-radius: 4px;
+
+                     @media (max-width:1024px) {
+                        max-width: 244px;
+                        width:100%;
+                        }
+
+                     &:hover{
+                     max-width: 380px;
+                     transform: scale(1.05, 1.05) translateZ(0px);
+                     transition: ease 1s;
+                     }
+                  }
+            }
+         }
+      }
+     &__detalhes{
+
+      .others__container{
+         display: flex;
+         
+         p{
+            @media (max-width:667px) {
+               font-size: 18px;
+              }
+         }
+
+         @media (max-width:1024px) {
+           display: block;
+
+         }
+         .others__container__list{
+            max-width: 250px;
+            color:#c4c2c2;
+            margin-left: 60px;
+
+            @media (max-width:1024px) {
+               margin:20px 0 ;
+               
+             }
+   
+           .others__container__list__item{
+
+               margin-top: 10px;
+               span{
+                  margin-top: 5px;
+                  display: block;
+   
+                  img{
+                     width: 20px;
+                  }
+               }
+             }
+           }
+        }
+     }
+    }
+   
+}
+footer{
+   background-color: #0e0b14;
+   width: 100%;
+   height: 300px;
+}
